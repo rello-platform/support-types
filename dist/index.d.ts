@@ -17,14 +17,14 @@
  * Rello's side. Spokes MAY pass them as hints; Rello is authoritative.
  */
 import { z } from "zod";
-export declare const TICKET_CATEGORIES: readonly ["BUG", "FEATURE_REQUEST", "ACCOUNT", "BILLING", "DATA_ISSUE", "INTEGRATION", "HOW_TO", "OTHER"];
-export declare const TicketCategorySchema: z.ZodEnum<["BUG", "FEATURE_REQUEST", "ACCOUNT", "BILLING", "DATA_ISSUE", "INTEGRATION", "HOW_TO", "OTHER"]>;
+export declare const TICKET_CATEGORIES: readonly ["ACCOUNT", "LEADS", "TECHNICAL", "BILLING", "FEATURE", "OTHER"];
+export declare const TicketCategorySchema: z.ZodEnum<["ACCOUNT", "LEADS", "TECHNICAL", "BILLING", "FEATURE", "OTHER"]>;
 export type TicketCategory = z.infer<typeof TicketCategorySchema>;
 export declare const TICKET_PRIORITIES: readonly ["LOW", "NORMAL", "HIGH", "URGENT"];
 export declare const TicketPrioritySchema: z.ZodEnum<["LOW", "NORMAL", "HIGH", "URGENT"]>;
 export type TicketPriority = z.infer<typeof TicketPrioritySchema>;
-export declare const TICKET_STATUSES: readonly ["OPEN", "IN_PROGRESS", "WAITING_ON_REPORTER", "RESOLVED", "CLOSED"];
-export declare const TicketStatusSchema: z.ZodEnum<["OPEN", "IN_PROGRESS", "WAITING_ON_REPORTER", "RESOLVED", "CLOSED"]>;
+export declare const TICKET_STATUSES: readonly ["OPEN", "IN_PROGRESS", "WAITING_ON_USER", "WAITING_ON_THIRD_PARTY", "RESOLVED", "CLOSED"];
+export declare const TicketStatusSchema: z.ZodEnum<["OPEN", "IN_PROGRESS", "WAITING_ON_USER", "WAITING_ON_THIRD_PARTY", "RESOLVED", "CLOSED"]>;
 export type TicketStatus = z.infer<typeof TicketStatusSchema>;
 export declare const TicketAttachmentSchema: z.ZodObject<{
     url: z.ZodString;
@@ -50,7 +50,7 @@ export declare const SupportSyncRequestSchema: z.ZodEffects<z.ZodObject<{
     tenantId: z.ZodString;
     subject: z.ZodString;
     description: z.ZodString;
-    category: z.ZodOptional<z.ZodEnum<["BUG", "FEATURE_REQUEST", "ACCOUNT", "BILLING", "DATA_ISSUE", "INTEGRATION", "HOW_TO", "OTHER"]>>;
+    category: z.ZodOptional<z.ZodEnum<["ACCOUNT", "LEADS", "TECHNICAL", "BILLING", "FEATURE", "OTHER"]>>;
     priority: z.ZodOptional<z.ZodEnum<["LOW", "NORMAL", "HIGH", "URGENT"]>>;
     leadId: z.ZodOptional<z.ZodString>;
     userId: z.ZodOptional<z.ZodString>;
@@ -82,7 +82,7 @@ export declare const SupportSyncRequestSchema: z.ZodEffects<z.ZodObject<{
     description: string;
     createdAt: string;
     externalTicketUrl?: string | undefined;
-    category?: "BUG" | "FEATURE_REQUEST" | "ACCOUNT" | "BILLING" | "DATA_ISSUE" | "INTEGRATION" | "HOW_TO" | "OTHER" | undefined;
+    category?: "ACCOUNT" | "LEADS" | "TECHNICAL" | "BILLING" | "FEATURE" | "OTHER" | undefined;
     priority?: "LOW" | "NORMAL" | "HIGH" | "URGENT" | undefined;
     leadId?: string | undefined;
     userId?: string | undefined;
@@ -103,7 +103,7 @@ export declare const SupportSyncRequestSchema: z.ZodEffects<z.ZodObject<{
     description: string;
     createdAt: string;
     externalTicketUrl?: string | undefined;
-    category?: "BUG" | "FEATURE_REQUEST" | "ACCOUNT" | "BILLING" | "DATA_ISSUE" | "INTEGRATION" | "HOW_TO" | "OTHER" | undefined;
+    category?: "ACCOUNT" | "LEADS" | "TECHNICAL" | "BILLING" | "FEATURE" | "OTHER" | undefined;
     priority?: "LOW" | "NORMAL" | "HIGH" | "URGENT" | undefined;
     leadId?: string | undefined;
     userId?: string | undefined;
@@ -124,7 +124,7 @@ export declare const SupportSyncRequestSchema: z.ZodEffects<z.ZodObject<{
     description: string;
     createdAt: string;
     externalTicketUrl?: string | undefined;
-    category?: "BUG" | "FEATURE_REQUEST" | "ACCOUNT" | "BILLING" | "DATA_ISSUE" | "INTEGRATION" | "HOW_TO" | "OTHER" | undefined;
+    category?: "ACCOUNT" | "LEADS" | "TECHNICAL" | "BILLING" | "FEATURE" | "OTHER" | undefined;
     priority?: "LOW" | "NORMAL" | "HIGH" | "URGENT" | undefined;
     leadId?: string | undefined;
     userId?: string | undefined;
@@ -145,7 +145,7 @@ export declare const SupportSyncRequestSchema: z.ZodEffects<z.ZodObject<{
     description: string;
     createdAt: string;
     externalTicketUrl?: string | undefined;
-    category?: "BUG" | "FEATURE_REQUEST" | "ACCOUNT" | "BILLING" | "DATA_ISSUE" | "INTEGRATION" | "HOW_TO" | "OTHER" | undefined;
+    category?: "ACCOUNT" | "LEADS" | "TECHNICAL" | "BILLING" | "FEATURE" | "OTHER" | undefined;
     priority?: "LOW" | "NORMAL" | "HIGH" | "URGENT" | undefined;
     leadId?: string | undefined;
     userId?: string | undefined;

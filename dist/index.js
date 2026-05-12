@@ -18,23 +18,25 @@
  */
 import { z } from "zod";
 // ─── Enums ──────────────────────────────────────────────────────────────────
+// Mirrors Rello's `enum TicketCategory` in `prisma/schema.prisma`.
+// Rello's enum is authoritative; this package mirrors it.
 export const TICKET_CATEGORIES = [
-    "BUG",
-    "FEATURE_REQUEST",
     "ACCOUNT",
+    "LEADS",
+    "TECHNICAL",
     "BILLING",
-    "DATA_ISSUE",
-    "INTEGRATION",
-    "HOW_TO",
+    "FEATURE",
     "OTHER",
 ];
 export const TicketCategorySchema = z.enum(TICKET_CATEGORIES);
 export const TICKET_PRIORITIES = ["LOW", "NORMAL", "HIGH", "URGENT"];
 export const TicketPrioritySchema = z.enum(TICKET_PRIORITIES);
+// Mirrors Rello's `enum TicketStatus`.
 export const TICKET_STATUSES = [
     "OPEN",
     "IN_PROGRESS",
-    "WAITING_ON_REPORTER",
+    "WAITING_ON_USER",
+    "WAITING_ON_THIRD_PARTY",
     "RESOLVED",
     "CLOSED",
 ];

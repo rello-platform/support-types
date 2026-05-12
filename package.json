@@ -1,6 +1,6 @@
 {
   "name": "@rello-platform/support-types",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Zod schemas + TypeScript types for the Rello platform Support Layer 1 contract (POST /api/support/sync request/response, shared by all spokes).",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
