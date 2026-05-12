@@ -1,0 +1,34 @@
+{
+  "name": "@rello-platform/support-types",
+  "version": "0.1.0",
+  "description": "Zod schemas + TypeScript types for the Rello platform Support Layer 1 contract (POST /api/support/sync request/response, shared by all spokes).",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src",
+    "README.md",
+    "LICENSE"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "lint": "eslint .",
+    "prepublishOnly": "npm run build"
+  },
+  "dependencies": {
+    "zod": "^3.23.0"
+  },
+  "devDependencies": {
+    "@rello-platform/eslint-config": "github:rello-platform/eslint-config#v0.4.0",
+    "eslint": "^9",
+    "typescript": "^5.4.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rello-platform/support-types.git"
+  },
+  "publishConfig": {
+    "registry": "https://npm.pkg.github.com"
+  },
+  "license": "UNLICENSED"
+}
