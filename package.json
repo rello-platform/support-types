@@ -13,7 +13,8 @@
   "scripts": {
     "compile": "tsc",
     "lint": "eslint .",
-    "prepublishOnly": "npm run compile"
+    "prepublishOnly": "npm run compile",
+    "hooks": "git config core.hooksPath .husky || true"
   },
   "dependencies": {
     "zod": "^3.23.0"
